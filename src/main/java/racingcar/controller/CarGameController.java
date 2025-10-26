@@ -2,8 +2,8 @@ package racingcar.controller;
 
 import racingcar.domain.Cars;
 import racingcar.service.CarGameService;
-import racingcar.view.OutputView;
 import racingcar.view.InputView;
+import racingcar.view.OutputView;
 
 public class CarGameController {
 
@@ -25,12 +25,12 @@ public class CarGameController {
         showWinner(cars);
     }
 
-    private void showWinner(Cars cars) {
+    private void showWinner(final Cars cars) {
         String result = carGameService.receiveWinnerNames(cars);
         outputView.printFinalWinner(result);
     }
 
-    private void executeGame(Cars cars, int attempt) {
+    private void executeGame(final Cars cars, final int attempt) {
         outputView.printGameResult();
 
         for (int iteration = 0; iteration < attempt; iteration++) {
