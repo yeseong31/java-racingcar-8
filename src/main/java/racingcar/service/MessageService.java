@@ -28,7 +28,7 @@ public class MessageService {
     }
 
     public void printRank(Cars cars) {
-        for (String carInfo : cars.getCurrentState()) {
+        for (String carInfo : cars.receiveCurrentRank()) {
             println(carInfo);
         }
         println();
