@@ -12,8 +12,8 @@ public class Car {
     private final String name;
     private final int forwardCount;
 
-    public Car(String name) {
-        this(name, 0);
+    public static Car of(String name) {
+        return new Car(name, 0);
     }
 
     private Car(String name, int forwardCount) {
