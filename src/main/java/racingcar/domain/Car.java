@@ -5,6 +5,7 @@ import org.junit.platform.commons.util.StringUtils;
 public class Car {
 
     private static final String INVALID_CAR_NAME_MESSAGE = "잘못된 입력입니다.";
+    private static final String FORWARD_TRAIL_INDICATOR = "-";
     private static final int MINIMUM_CAR_NAME_LENGTH = 1;
     private static final int MAXIMUM_CAR_NAME_LENGTH = 5;
 
@@ -19,6 +20,14 @@ public class Car {
         validate(name);
         this.name = name;
         this.forwardCount = forwardCount;
+    }
+
+    public Car increaseForwardCount() {
+        return new Car(name, forwardCount + 1);
+    }
+
+    public String receiveForwardTrail() {
+        return FORWARD_TRAIL_INDICATOR.repeat(forwardCount);
     }
 
     private void validate(String name) {
